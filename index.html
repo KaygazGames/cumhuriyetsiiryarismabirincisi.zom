@@ -1,18 +1,14 @@
-<?php
-$user_agent = $_SERVER['HTTP_USER_AGENT'];
-
-if (preg_match('/Windows/i', $user_agent)) {
-    header('Location: /downloads/Virüs.exe');
-    exit;
-} elseif (preg_match('/Android/i', $user_agent)) {
-    header('Location: /downloads/Virüs.apk');
-    exit;
-} elseif (preg_match('/iPhone|iPad|iPod/i', $user_agent)) {
-    header('Location: /downloads/Virüs.ipa');
-    exit;
-} else {
-    // Diğer işletim sistemleri için varsayılan indirme
-    header('Location: /downloads/Virüs.exe');
-    exit;
-}
-?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dosya İndir - Virüs.exe</title>
+</head>
+<body>
+  <h1>antivirüs.exe İndir</h1>
+  <p>Butona tıklayarak dosyayı indirebilirsiniz.</p>
+  <a href="Virüs.exe" download>
+    <button>Dosyayı İndir</button>
+  </a>
+</body>
+</html>
